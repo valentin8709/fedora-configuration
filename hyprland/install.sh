@@ -15,6 +15,11 @@ cp UserConfigs/UserKeybinds.conf ~/.config/hypr/UserConfigs/
 echo "Done"
 echo ""
 
+echo "Setup KeyHints.sh..."
+cp scripts/KeyHints.sh ~/.config/hypr/scripts/
+echo "Done"
+echo ""
+
 echo "Setup Rofi search config..."
 cp rofi/config-search.rasi ~/.config/rofi/
 echo "Done"
