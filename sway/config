@@ -34,6 +34,13 @@ set $menu $rofi_cmd -show combi -combi-modes drun #run -modes combi
 # Custom transparency
 for_window [title=.*] opacity 1
 
+# Set GTK Theme
+
+exec_always {
+    gsettings set org.gnome.desktop.interface gtk-theme "Catppuccin-Mocha"
+    gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
+}
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -104,6 +111,9 @@ output * bg /usr/share/backgrounds/default.jxl fill
     # Lock session
     bindsym Ctrl+Alt+l exec swaylock
 
+    # Control notification center
+    bindsym $mod+Shift+n exec swaync-client -t -sw
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -115,7 +125,7 @@ output * bg /usr/share/backgrounds/default.jxl fill
     bindsym $mod+Alt+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -243,19 +253,20 @@ bindsym $mod+r mode "resize"
 gaps inner 4
 gaps outer 2
 hide_edge_borders none
-default_border pixel 1
-default_floating_border pixel 1
-for_window [class="^.*"] border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
+for_window [class="^.*"] border pixel 2
 
 # Colors Variables
 set $clear  #00000000
-set $mauve  #cba6f7
-set $base   #1e1e2e
+set $mauve  #CBAFF0
+set $mdark  #544263
+set $base   #1E1E2E
 
 # Windows Color         Border | Background | Texts | Indicator | Child_Border
 client.focused          $mauve   $base        $mauve  $mauve	  $mauve
 client.focused_inactive $clear   $base        #cdd6f4 $clear	  $clear
-client.unfocused        $clear   $base        #cdd6f4 $clear	  $clear
+client.unfocused        $clear   $base        #cdd6f4 $clear	  $mdark
 
 # Include configs from 3 locations:
 #  - /usr/share/sway/config.d
