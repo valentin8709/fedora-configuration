@@ -30,6 +30,11 @@ cp wlogout/* ~/.config/wlogout/
 echo "Done"
 echo ""
 
+echo "Setup Kitty"
+cp kitty/* ~/.config/kitty/
+echo "Done"
+echo ""
+
 echo "=== Hyprland UserConfig Setup Done ==="
 echo ""
 
