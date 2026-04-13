@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 
 # GDK BACKEND. Change to either wayland or x11 if having issues
@@ -33,7 +33,8 @@ GDK_BACKEND=$BACKEND yad \
 " A" "Desktop Overview" "(AGS - if opted to install)" \
 " D" "Application Launcher" "(rofi-wayland)" \
 " E" "Open File Manager" "(Thunar)" \
-" S" "DuckDuckGo Search using rofi" "(rofi)" \
+" S" "DuckDuck Search using rofi" "(rofi)" \
+" T" "Global theme switcher" "(rofi)" \
 " Q" "Close active window" "(not kill)" \
 " Shift Q " "Kills an active window" "(kill)" \
 " ALT mouse scroll up/down   " "Desktop Zoom" "Desktop Magnifier" \
